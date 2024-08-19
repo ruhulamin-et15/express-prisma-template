@@ -3,10 +3,11 @@ import express, { NextFunction, Request, Response } from "express";
 import createHttpError from "http-errors";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import bodyParser from "body-parser";
 
 //internal imports
-import { errorResponse } from "./app/middlewares/errorResponse";
-import bodyParser from "body-parser";
+import { errorResponse } from "./app/utils/errorResponse";
+import { successResponse } from "./app/utils/successResponse";
 
 const app = express();
 
@@ -19,9 +20,9 @@ app.use(cookieParser());
 
 //router point
 app.get("/", (req: Request, res: Response) => {
-  res.status(404).json({
+  successResponse(res, {
     statusCode: 200,
-    message: "this is home route",
+    message: " this is home route",
   });
 });
 

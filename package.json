@@ -27,6 +27,7 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "http-errors": "^2.0.0"
+    "http-errors": "^2.0.0",
+    "zod": "^3.23.8"
   }
 }
