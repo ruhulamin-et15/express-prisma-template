@@ -1,6 +1,14 @@
 import app from "./app";
-import { serverPort } from "./config";
+import { config } from "./config";
 
-app.listen(serverPort, () => {
-  console.log(`Server is running on http://localhost:${serverPort}`);
-});
+async function main() {
+  try {
+    app.listen(config.serverPort, () => {
+      console.log(`Example app listening on port ${config.serverPort}`);
+    });
+  } catch (err: any) {
+    console.log(err.message);
+  }
+}
+
+main();
